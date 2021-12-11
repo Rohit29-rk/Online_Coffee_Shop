@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %} Recipt {% endblock title %}
+{% block mycss %}
+
+{% endblock mycss %}
+{% block body %}
+<center>
+    <h2 style="margin-top: 5px;">Payment Receipt</h2><br>
+    <table border="3" width="600px" height="400px" style="color:#000">
+
+
+
+<style>
+    .border-bottom{
+        border-bottom: 3px solid #000 !important;
+    } 
+    strong{
+        font-size: xx-large;
+    }  
+    footer{
+        display: none;
+    }
+    .btn{
+        border: 1px solid black;
+    } 
+    @media print{
+        #printp{
+            display: none;
+        }
+
+    }
+   
+</style>
+    
+    <tr>
+        <tr class="border-bottom">
+            <th class="text-center" style="width: 150px;"><img src="static/logo.png" height="70px" width="90px"></th>
+            <td class="text-center">
+                <strong> RK CAFE</strong> 
+            </td>
+        </tr>
+    </tr>
+    {% for i in order%}
+    <tr>
+        <tr class="text-center">
+            <th>Name of Customer</th>
+            <td>
+                {{ i.noc }}
+            </td>
+        </tr>
+        <tr class="text-center">
+            <th>Product Name</th>
+            <td>
+                {{ i.prod }}
+            </td>
+        </tr>
+        <tr class="text-center">
+            <th>Card Number</th>
+            <td>
+                {{ i.cardno }}
+            </td>
+        </tr>
+        <tr class="text-center">
+            <th>Street Address</th>
+            <td>
+                {{ i.street }}
+            </td>
+        </tr>
+        <tr class="text-center">
+            <th>City</th>
+            <td>
+                {{ i.city }}
+            </td>
+        </tr>
+        <tr class="text-center">
+            <th>State/Province</th>
+            <td>
+                {{ i.state }}
+            </td>
+        </tr>
+        <tr class="text-center">
+            <th>zip</th>
+            <td>
+                {{ i.zip }}
+            </td>
+        </tr>
+        <tr class="text-center">
+            <th>Amount Paid</th>
+            <td style="color: red;">
+               <b>{{ i.price }}.Rs</b>
+            </td>
+        </tr>
+
+        </tr>
+
+
+
+
+    {% endfor %}
+    </table>
+    <button class="btn hvr-right my-4 text-capitalize" id="printp" onclick="window.print()" style="margin-top: 15px;;"><b>Print</b></button>
+</center>
+
+
+{% endblock body %}

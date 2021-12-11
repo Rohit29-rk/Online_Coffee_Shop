@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Products {% endblock title %}
+{% block mycss %}
+{% endblock mycss %}
+{% block body %}
+<h1 class="text-center text-color font-weight-bolder">Products</h1>
+<div class="row justify-content-around align-items-center" style="margin-top: 25px; padding-bottom: 35px; margin-left: 5px; margin-right: 5px;">
+
+  {% for i in product%}
+ 
+    <div class="col-xl-3 col-lg-4 col-sm rotate">
+      <div class="card text-center mb-3 coffee-card" >
+        <div class="card-header">
+          <h4 class="font-weight-light title-text">{{ i.name }}</h4>
+        </div>
+        <div class="card-body">
+          <img src="static/{{ i.image }}" class="img-fluid rounded" style="height: 250px;" !important>
+        </div>
+        <div class="card-footer">
+          {{ i.witha }}
+        </div>
+        <div class="back">
+          <div class="back-content">
+            <h1 class="text-uppercase font-weight-light">Only for</h1>
+            <h3 class="mb-3" style="color: #ca3434;">{{ i.price }}Rs</h3>
+            <form action="/order" method="POST">
+              {% csrf_token %}
+              <input type="text" hidden name="ro" value="{{ i.name }}">
+              <input type="text" hidden name="ao" value="{{ i.price }}">
+              <input type="text" hidden name="so" value="{{ i.image }}">
+              <input href="/order" type="submit" class="btn hvr-right my-4 text-capitalize" style="background-color: #dbc1ac;" name="viewname" value="order"></input> 
+
+            </form>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+{% endfor %}
+</div>
+
+
+{% endblock body %}
+{% block js %}
+
+
+
+
+{% endblock js %}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %} About {% endblock title %}
+{% block mycss %} 
+<style>
+    .grid-container {
+      display: grid;
+      grid-gap: 10px;
+      background-color: transparent;
+      padding: 10px;
+    }
+    
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      
+      
+      font-size: 30px;
+    }
+    
+    .item1 {
+     
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    
+    .item2 {
+    
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 2;
+    }
+    .item5 {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+
+@media only screen and (max-width: 990px){
+    .item2,.item5{
+        font-size: 25px;
+    }
+    .images{
+        height: 240px;
+        width:240px;
+    }
+}
+@media only screen and (max-width: 803px){
+    .item2,.item5{
+        font-size: 20px;
+    }
+    .images{
+        height: 210px;
+        width:210px;
+    }
+}
+@media only screen and (max-width: 630px){
+    .item2,.item5{
+        font-size: 15px;
+    }
+    .images{
+        height: 180px;
+        width:180px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .item2,.item5{
+        font-size: 12px;
+    }
+    .images{
+        height: 150px;
+        width:150px;
+    }
+}
+@media only screen and (max-width: 300px){
+    .item2,.item5{
+        font-size: 9px;
+    }
+    .images{
+        height: 110px;
+        width:110px;
+    }
+}
+    
+    
+    
+    </style>
+{% endblock mycss %}
+{% block body %} 
+<h1 style="text-align: center;">RK Caafe</h1>
+
+<div class="grid-container">
+    <div class="grid-item item1"><img class="images" style="margin: 20px;padding: 10px; border:3px solid black;" src="static/logo.png"></div>
+    <div class="grid-item item2">RK cafe was inaugurated by PM Narendra Modi on 29th of October 2018. It is one of the famous cafe in our city. Iure facilis odit assumenda, nostrum eligendi nesciunt maxime, consequuntur fuga suscipit vitae at beatae neque exercitationem. Veritatis ab omnis magni quasi totam. Consequuntur ad numquam molestias vitae distinctio, aperiam vel in facere esse ipsa quia laboriosam enim architecto harum amet rerum nemo aliquam voluptatibus ullam, natus, quasi at id! A, pariatur reprehenderit! Officia dicta excepturi numquam enim dolor sunt, porro accusantium aspernatur cum blanditiis, iusto quod consequuntur nesciunt.</div>
+    <div class="grid-item item5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores corrupti doloribus modi laboriosam. Quis saepe iure et quae iusto obcaecati perferendis, nobis repellat velit suscipit alias quidem, ipsam eius itaque cupiditate modi dolorum exercitationem ad ullam. Fugiat laborum veniam sapiente odit deleniti, corporis ullam, saepe delectus repellendus sint ad atque?</div>
+    
+  </div>
+{% endblock body %} 

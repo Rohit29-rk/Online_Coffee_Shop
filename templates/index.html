@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block mycss %}
+
+<style>
+  .para {
+
+    font-size: 27px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    animation: slide 2s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+    text-shadow: 2px 2px #000;
+  }
+
+  .cafe-name {
+
+    font-weight: 500;
+    border: 2px solid ghostwhite;
+    border-radius: 65px;
+    background-color: rgba(0, 0, 0, 0.63);
+    color: rgba(235, 224, 82, 0.774);
+    animation: slide;
+    animation-duration: 2s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateY(-1000px);
+      opacity: 0;
+
+    }
+
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  .d-block {
+    filter: blur(1px);
+  }
+
+  .mt-4,
+  .my-4 {
+    margin-top: 3rem !important;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .about-images {
+
+      height: 400px;
+
+    }
+    
+    
+  }
+
+  @media only screen and (max-width: 992px) {
+    .about-images {
+
+      height: 400px;
+      width: 480px;
+
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+    .about-images {
+      margin-left: 50px;
+      height: 400px;
+      width: 480px;
+
+    }
+
+  }
+
+  @media only screen and (max-width: 376px) {
+    .about-images {
+
+      margin-left: 50px;
+      width: 500px;
+      height: 200px;
+    }
+
+    .img-1 {
+      width: 100px;
+      height: 75px;
+    }
+
+    .img-2 {
+      width: 100px;
+      height: 75px;
+    }
+
+    .img-3 {
+      width: 100px;
+      height: 75px;
+    }
+
+    .img-4 {
+      width: 100px;
+      height: 75px;
+    }
+
+    .img-5 {
+      width: 100px;
+      height: 75px;
+    }
+    .para{
+      font-size: 22px;  
+      
+    }
+    .cafe-name{
+      font-size: 22px;
+                
+    }
+  }
+  @media only screen and (max-width: 503px){
+  .para{
+      font-size: 22px;  
+      
+    }
+    .cafe-name{
+      font-size: 22px;
+                
+    }
+  }
+  .img-thumbnail{
+    border-radius: 0%;
+  }
+</style>
+
+{% endblock mycss %}
+{% block body %}
+<div class="container-fluid px-0 my-2">
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="static/cafe3.jpg" class="d-block w-100" alt="..." height="600">
+        <div class="carousel-caption">
+          <h1 class="cafe-name">Welcome to RK Cafe</h1>
+          <p class="para">We believe a cup of coffee is one of the most important simple pleasures in life.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="static/cafe1.jpg" class="d-block w-100" alt="..." height="600">
+        <div class="carousel-caption">
+          <h1 class="cafe-name">Welcome to RK Cafe</h1>
+          <p class="para">Taste The Freshness!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="static/cafe2.jpg" class="d-block w-100" alt="..." height="600">
+        <div class="carousel-caption">
+          <h1 class="cafe-name">Welcome to RK Cafe</h1>
+          <p class="para">Inaugurated by PM Narendra Modi on 29th of October 2018 </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+
+  </div>
+</div>
+
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row" style="padding-bottom: 25px; padding-top: 50px;">
+      <div class="col-md-6 my-4">
+        <h1 class="text-uppercase title-text display-3">About Us</h1>
+        <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus maiores reiciendis ab quam
+          deserunt exercitationem impedit esse ex blanditiis atque</p>
+        <a href="/about" class="btn hvr-right my-4 text-capitalize Button">Know More</a>
+      </div>
+      <div class="col-md-6 about-images my-4">
+        <img src="static/Espresso.jpg" alt="" class="img-1 img-thumbnail about-img">
+        <img src="static/cafe2.jpg" alt="" class="img-2 img-thumbnail about-img">
+        <img src="static/cafe3.jpg" alt="" class="img-3 img-thumbnail about-img">
+        <img src="static/cafe.jpg" alt="" class="img-4 img-thumbnail about-img">
+        <img src="static/caf.jpg" alt="" class="img-5 img-thumbnail about-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="most-liked">
+  <div class="video-container">
+    <video class="bg-video" autoplay muted loop>
+      <source src="static/cm.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col text-center py-5">
+        <h2 class="text-uppercase text-color font-weight-bold">Most Demanded</h2>
+      </div>
+    </div>
+    <div class="row justify-content-around align-items-center" style="margin-top: 25px; padding-bottom: 35px;">
+      <div class="col-xl-3 col-lg-4 col-sm rotate">
+        <div class="card text-center mb-3 coffee-card" style="height: 400px;">
+          <div class="card-header">
+            <h4 class="font-weight-light title-text">Espresso</h4>
+          </div>
+          <div class="card-body">
+            <img src="static/Espresso.jpg" class="img-fluid rounded">
+          </div>
+          <div class="card-footer">
+            with Muffin
+          </div>
+          <div class="back">
+            <div class="back-content">
+              <h1 class="text-uppercase font-weight-light">Only for</h1>
+              <h3 class="mb-3" style="color: #ca3434;">200Rs</h3>
+              <a href="#" class="btn hvr-right my-4 text-capitalize">Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-sm rotate">
+        <div class="card text-center mb-3 coffee-card" style="height: 400px;">
+          <div class="card-header">
+            <h4 class="font-weight-light title-text">Cafe Latte</h4>
+          </div>
+          <div class="card-body">
+            <img src="static/doughnut.jpg" class="img-fluid rounded">
+          </div>
+          <div class="card-footer">
+            with Doughnut
+          </div>
+          <div class="back">
+            <div class="back-content">
+              <h1 class="text-uppercase font-weight-light">Only for</h1>
+              <h3 class="mb-3" style="color: #ca3434;">300Rs</h3>
+              <a href="#" class="btn hvr-right my-4 text-capitalize">Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-sm rotate">
+        <div class="card text-center mb-3 coffee-card" style="height: 400px;">
+          <div class="card-header">
+            <h4 class="font-weight-light title-text">Cappuccino</h4>
+          </div>
+          <div class="card-body">
+            <img src="static/c.jpg" class="img-fluid rounded">
+          </div>
+          <div class="card-footer">
+            with Chocolate Cookies
+          </div>
+          <div class="back">
+            <div class="back-content">
+              <h1 class="text-uppercase font-weight-light">Only for</h1>
+              <h3 class="mb-3" style="color: #ca3434;">350Rs</h3>
+              <a href="#" class="btn hvr-right my-4 text-capitalize">Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock body %}
