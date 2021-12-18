@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from django.views.static import serve
+from django.conf.urls import url
+
 admin.site.site_header = "RK cafe Admin"
 admin.site.site_title = "RK cafe Admin Portal"
 admin.site.index_title = "Welcome to RK cafe Researcher Portal"
